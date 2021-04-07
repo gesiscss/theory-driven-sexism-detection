@@ -1,0 +1,254 @@
+<QuestionForm xmlns='http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2005-10-01/QuestionForm.xsd'>
+	<Overview>
+		<FormattedContent><![CDATA[
+		<p>It will take you additional time to complete this HIT type for the first time: we bumped up the compensation for the HITs of this type to account for that. We will make a few thousands HITs of this type available to you shortly, so stay tuned!</p>
+<p><strong>What makes a message sexist?</strong></p>
+            <p>Your task is to annotate if a sentence is sexist: because of its content (what the speaker believes), or because of its phrasing (because of the speaker’s choice of words)</p>
+            <p>Task 1:</p>
+            <p>A message may be sexist because of its content--in other words, because of what the speaker believes. For example, the speaker may express sexist attitudes towards gender inequality, either endorsing it (e.g. “some jobs are best left to men”), or antagonizing it (e.g. “the pay gap between genders does not exist, feminists should stop complaining”). Also, the speaker may express stereotypes (how genders are traditionally seen and compared to each other) and behavioral expectations (how individuals of a gender should behave according to traditional views). Be careful: sexism may also include positive stereotypes (e.g. “women are the best home cooks”), or target  men (e.g., “men should not cry”)!</p>
+            <p>Task 2:</p>
+            <p>Moreover, a message may be sexist simply because of how the speaker phrases it--independently from what general beliefs or attitudes the speaker holds. A message is sexist, for example, when it contains attacks, foul language, or derogatory depictions directed towards individuals because of their gender, e.g. by means of name-calling ("you bitch"), attacks ("I'm going to kick her back to the kitchen"), objectification ("She's stupid but I'd still do her"), inflammatory messages ("burn all women"). However, just because a message is aggressive or uses offensive language does not mean that it is sexist! </p>
+            <p>Ready to help us understand sexism? In the detailed instructions you will find explanations for each coding option.</p>
+            <p>Disclaimer: This tasks contains language that might be offensive to some turkers (e.g., sexism and swear words). Do not do this task if this is an issue for you.</p>
+<p>Ready to help us understand sexism? Here are the codes you will use to annotate for content:</p><table dir="ltr" border="1"  cellspacing="0" cellpadding="0"><colgroup><col  /><col  /></colgroup><tbody><tr><td  ><strong>content code</strong></td><td  ><strong>explanation</strong></td></tr><tr><td  >Behavioral Expectations</td><td  >how individuals of a gender should behave according to traditional views, e.g. women should be around the house</td></tr><tr><td  >Stereotypes and Comparative Opinions</td><td  >how genders are traditionally seen and compared to each other, e.g. judging women mainly on the standards of beauty.</td></tr><tr><td  >Endorsement of Inequality</td><td  >the inequality between genders is beneficial, efforts to maintain it should be encouraged</td></tr><tr><td  >Denying Inequality &amp; Rejecting Feminism</td><td  >the inequality between genders does not exist or is overblown, attempts to solve it are detrimental</td></tr><tr><td  >Maybe sexist: can't tell without context</td><td  >the message might be sexist or not, e.g. depending on the context of the conversation, the content of links, etc.</td></tr><tr><td  >Not sexist: not a direct statement of sexist opinion</td><td  >the speaker does not clearly hold sexist beliefs (the message might still be phrased in a sexist way though)</td></tr></tbody></table>
+<br/><br/><p>Here are the codes you will use to annotate for phrasing:
+</p><br/><br/><table dir="ltr" border="1" cellspacing="0" cellpadding="0"><colgroup><col  /><col  /></colgroup><tbody><tr><td ><strong>phrasing code</strong></td><td ><strong>explanation</strong></td></tr><tr><td >Uncivil and sexist: attacks, foul language, or derogatory depictions directed towards individuals because of their gender</td><td >humiliates individuals because of their sex or gender identity, for example by means of name-calling (e.g. "you bitch"), attacks (e.g. "I'm going to kick her back to the kitchen"), objectification (e.g. "She's stupid but I'd still do her"); inflammatory messages (e.g. "burn all women")</td></tr><tr><td >Uncivil but not sexist: offensive phrasing or message that is not clearly directed towards the target's gender</td><td >still offensive (including for example name-calling, attacks, inflammatory language, ...) but not because of the target's sex or gender identity</td></tr><tr><td >Civil (can be sexist or not sexist): neutral phrasing that does not contain offenses or slurs</td><td >Messages without clear incivility. The message can still be sexist because of the content that it conveys</td></tr></tbody></table>
+]]></FormattedContent>    
+	</Overview>
+	<Question>
+		<QuestionIdentifier>q1content</QuestionIdentifier>
+		<DisplayName>Content: which type of sexist phrasing applies to the following tweet?</DisplayName>
+		<IsRequired>true</IsRequired>
+	    <QuestionContent>
+	        <FormattedContent><![CDATA[
+<p><strong>RT @NathanWassihun I'm not sexist but BITCHES CANNOT DRIVE</strong></p>
+Content: which type of sexist content appears in the previous tweet?
+
+]]></FormattedContent>
+		</QuestionContent>
+		<AnswerSpecification>
+		    <SelectionAnswer>
+				<StyleSuggestion>radiobutton</StyleSuggestion>
+					<Selections>
+						<Selection><SelectionIdentifier>a1</SelectionIdentifier><Text>Behavioral Expectations</Text></Selection>
+						<Selection><SelectionIdentifier>a2</SelectionIdentifier><Text>Stereotypes and Comparative Opinions</Text></Selection>
+						<Selection><SelectionIdentifier>a3</SelectionIdentifier><Text>Endorsement of Inequality</Text></Selection>
+						<Selection><SelectionIdentifier>a4</SelectionIdentifier><Text>Denying Inequality or Rejecting Feminism</Text></Selection>
+						<Selection><SelectionIdentifier>a5</SelectionIdentifier><Text>Maybe sexist: can't tell without context</Text></Selection>
+						<Selection><SelectionIdentifier>a6</SelectionIdentifier><Text>Not sexist: not a direct statement of sexist opinion</Text></Selection>
+					</Selections>
+		    </SelectionAnswer>
+		</AnswerSpecification>
+	</Question>    
+	<Question>
+		<QuestionIdentifier>q1phrasing</QuestionIdentifier>
+		<DisplayName>Phrasing: which type of sexist phrasing applies to the previous tweet?</DisplayName>
+		<IsRequired>true</IsRequired>
+	    <QuestionContent>
+	        <FormattedContent><![CDATA[
+			Phrasing: which type of sexist phrasing appears in the previous tweet?
+]]></FormattedContent>
+		</QuestionContent>
+		<AnswerSpecification>
+		    <SelectionAnswer>
+				<StyleSuggestion>radiobutton</StyleSuggestion>
+					<Selections>
+						<Selection><SelectionIdentifier>a1</SelectionIdentifier><Text>Uncivil and sexist: attacks, foul language, or derogatory depictions directed towards individuals because of their gender</Text></Selection>
+						<Selection><SelectionIdentifier>a2</SelectionIdentifier><Text>Uncivil but not sexist: offensive phrasing or message that is not clearly directed towards the target's gender</Text></Selection>
+						<Selection><SelectionIdentifier>a3</SelectionIdentifier><Text>Civil (can be sexist or not sexist): neutral phrasing that does not contain offenses or slurs</Text></Selection>
+					</Selections>
+		    </SelectionAnswer>
+		</AnswerSpecification>
+	</Question>    
+
+
+	<Question>
+		<QuestionIdentifier>q2content</QuestionIdentifier>
+		<DisplayName>Content: which type of sexist phrasing applies to the following tweet?</DisplayName>
+		<IsRequired>true</IsRequired>
+	    <QuestionContent>
+	        <FormattedContent><![CDATA[
+<p><strong>RT @Banthemoms I'm not sexist but I hate feminists females already got equal rights stop complaining</strong></p>
+Content: which type of sexist content appears in the previous tweet?
+
+]]></FormattedContent>
+		</QuestionContent>
+		<AnswerSpecification>
+		    <SelectionAnswer>
+				<StyleSuggestion>radiobutton</StyleSuggestion>
+					<Selections>
+						<Selection><SelectionIdentifier>a1</SelectionIdentifier><Text>Behavioral Expectations</Text></Selection>
+						<Selection><SelectionIdentifier>a2</SelectionIdentifier><Text>Stereotypes and Comparative Opinions</Text></Selection>
+						<Selection><SelectionIdentifier>a3</SelectionIdentifier><Text>Endorsement of Inequality</Text></Selection>
+						<Selection><SelectionIdentifier>a4</SelectionIdentifier><Text>Denying Inequality or Rejecting Feminism</Text></Selection>
+						<Selection><SelectionIdentifier>a5</SelectionIdentifier><Text>Maybe sexist: can't tell without context</Text></Selection>
+						<Selection><SelectionIdentifier>a6</SelectionIdentifier><Text>Not sexist: not a direct statement of sexist opinion</Text></Selection>
+					</Selections>
+		    </SelectionAnswer>
+		</AnswerSpecification>
+	</Question>    
+	<Question>
+		<QuestionIdentifier>q2phrasing</QuestionIdentifier>
+		<DisplayName>Phrasing: which type of sexist phrasing applies to the previous tweet?</DisplayName>
+		<IsRequired>true</IsRequired>
+	    <QuestionContent>
+	        <FormattedContent><![CDATA[
+			Phrasing: which type of sexist phrasing appears in the previous tweet?
+]]></FormattedContent>
+		</QuestionContent>
+		<AnswerSpecification>
+		    <SelectionAnswer>
+				<StyleSuggestion>radiobutton</StyleSuggestion>
+					<Selections>
+						<Selection><SelectionIdentifier>a1</SelectionIdentifier><Text>Uncivil and sexist: attacks, foul language, or derogatory depictions directed towards individuals because of their gender</Text></Selection>
+						<Selection><SelectionIdentifier>a2</SelectionIdentifier><Text>Uncivil but not sexist: offensive phrasing or message that is not clearly directed towards the target's gender</Text></Selection>
+						<Selection><SelectionIdentifier>a3</SelectionIdentifier><Text>Civil (can be sexist or not sexist): neutral phrasing that does not contain offenses or slurs</Text></Selection>
+					</Selections>
+		    </SelectionAnswer>
+		</AnswerSpecification>
+	</Question>    
+
+
+	<Question>
+		<QuestionIdentifier>q3content</QuestionIdentifier>
+		<DisplayName>Content: which type of sexist phrasing applies to the following tweet?</DisplayName>
+		<IsRequired>true</IsRequired>
+	    <QuestionContent>
+	        <FormattedContent><![CDATA[
+<p><strong>Swearing and obscenity are more repulsive in the speech of a woman than of a man.</strong></p>
+Content: which type of sexist content appears in the previous tweet?
+
+]]></FormattedContent>
+		</QuestionContent>
+		<AnswerSpecification>
+		    <SelectionAnswer>
+				<StyleSuggestion>radiobutton</StyleSuggestion>
+					<Selections>
+						<Selection><SelectionIdentifier>a1</SelectionIdentifier><Text>Behavioral Expectations</Text></Selection>
+						<Selection><SelectionIdentifier>a2</SelectionIdentifier><Text>Stereotypes and Comparative Opinions</Text></Selection>
+						<Selection><SelectionIdentifier>a3</SelectionIdentifier><Text>Endorsement of Inequality</Text></Selection>
+						<Selection><SelectionIdentifier>a4</SelectionIdentifier><Text>Denying Inequality or Rejecting Feminism</Text></Selection>
+						<Selection><SelectionIdentifier>a5</SelectionIdentifier><Text>Maybe sexist: can't tell without context</Text></Selection>
+						<Selection><SelectionIdentifier>a6</SelectionIdentifier><Text>Not sexist: not a direct statement of sexist opinion</Text></Selection>
+					</Selections>
+		    </SelectionAnswer>
+		</AnswerSpecification>
+	</Question>    
+	<Question>
+		<QuestionIdentifier>q3phrasing</QuestionIdentifier>
+		<DisplayName>Phrasing: which type of sexist phrasing applies to the previous tweet?</DisplayName>
+		<IsRequired>true</IsRequired>
+	    <QuestionContent>
+	        <FormattedContent><![CDATA[
+			Phrasing: which type of sexist phrasing appears in the previous tweet?
+]]></FormattedContent>
+		</QuestionContent>
+		<AnswerSpecification>
+		    <SelectionAnswer>
+				<StyleSuggestion>radiobutton</StyleSuggestion>
+					<Selections>
+						<Selection><SelectionIdentifier>a1</SelectionIdentifier><Text>Uncivil and sexist: attacks, foul language, or derogatory depictions directed towards individuals because of their gender</Text></Selection>
+						<Selection><SelectionIdentifier>a2</SelectionIdentifier><Text>Uncivil but not sexist: offensive phrasing or message that is not clearly directed towards the target's gender</Text></Selection>
+						<Selection><SelectionIdentifier>a3</SelectionIdentifier><Text>Civil (can be sexist or not sexist): neutral phrasing that does not contain offenses or slurs</Text></Selection>
+					</Selections>
+		    </SelectionAnswer>
+		</AnswerSpecification>
+	</Question>    
+
+
+	<Question>
+		<QuestionIdentifier>q4content</QuestionIdentifier>
+		<DisplayName>Content: which type of sexist phrasing applies to the following tweet?</DisplayName>
+		<IsRequired>true</IsRequired>
+	    <QuestionContent>
+	        <FormattedContent><![CDATA[
+<p><strong>I hope Kat gets Ebola and then hit by a train followed by a smack in the ugly face with a shovel #mkr #katandandre #mkrkat</strong></p>
+Content: which type of sexist content appears in the previous tweet?
+
+]]></FormattedContent>
+		</QuestionContent>
+		<AnswerSpecification>
+		    <SelectionAnswer>
+				<StyleSuggestion>radiobutton</StyleSuggestion>
+					<Selections>
+						<Selection><SelectionIdentifier>a1</SelectionIdentifier><Text>Behavioral Expectations</Text></Selection>
+						<Selection><SelectionIdentifier>a2</SelectionIdentifier><Text>Stereotypes and Comparative Opinions</Text></Selection>
+						<Selection><SelectionIdentifier>a3</SelectionIdentifier><Text>Endorsement of Inequality</Text></Selection>
+						<Selection><SelectionIdentifier>a4</SelectionIdentifier><Text>Denying Inequality or Rejecting Feminism</Text></Selection>
+						<Selection><SelectionIdentifier>a5</SelectionIdentifier><Text>Maybe sexist: can't tell without context</Text></Selection>
+						<Selection><SelectionIdentifier>a6</SelectionIdentifier><Text>Not sexist: not a direct statement of sexist opinion</Text></Selection>
+					</Selections>
+		    </SelectionAnswer>
+		</AnswerSpecification>
+	</Question>    
+	<Question>
+		<QuestionIdentifier>q4phrasing</QuestionIdentifier>
+		<DisplayName>Phrasing: which type of sexist phrasing applies to the previous tweet?</DisplayName>
+		<IsRequired>true</IsRequired>
+	    <QuestionContent>
+	        <FormattedContent><![CDATA[
+			Phrasing: which type of sexist phrasing appears in the previous tweet?
+]]></FormattedContent>
+		</QuestionContent>
+		<AnswerSpecification>
+		    <SelectionAnswer>
+				<StyleSuggestion>radiobutton</StyleSuggestion>
+					<Selections>
+						<Selection><SelectionIdentifier>a1</SelectionIdentifier><Text>Uncivil and sexist: attacks, foul language, or derogatory depictions directed towards individuals because of their gender</Text></Selection>
+						<Selection><SelectionIdentifier>a2</SelectionIdentifier><Text>Uncivil but not sexist: offensive phrasing or message that is not clearly directed towards the target's gender</Text></Selection>
+						<Selection><SelectionIdentifier>a3</SelectionIdentifier><Text>Civil (can be sexist or not sexist): neutral phrasing that does not contain offenses or slurs</Text></Selection>
+					</Selections>
+		    </SelectionAnswer>
+		</AnswerSpecification>
+	</Question>    
+
+
+	<Question>
+		<QuestionIdentifier>q5content</QuestionIdentifier>
+		<DisplayName>Content: which type of sexist phrasing applies to the following tweet?</DisplayName>
+		<IsRequired>true</IsRequired>
+	    <QuestionContent>
+	        <FormattedContent><![CDATA[
+<p><strong>It's good to talk with your wife but it's so much easier to say shut up n make me a sammich #notsexist lol</strong></p>
+Content: which type of sexist content appears in the previous tweet?
+
+]]></FormattedContent>
+		</QuestionContent>
+		<AnswerSpecification>
+		    <SelectionAnswer>
+				<StyleSuggestion>radiobutton</StyleSuggestion>
+					<Selections>
+						<Selection><SelectionIdentifier>a1</SelectionIdentifier><Text>Behavioral Expectations</Text></Selection>
+						<Selection><SelectionIdentifier>a2</SelectionIdentifier><Text>Stereotypes and Comparative Opinions</Text></Selection>
+						<Selection><SelectionIdentifier>a3</SelectionIdentifier><Text>Endorsement of Inequality</Text></Selection>
+						<Selection><SelectionIdentifier>a4</SelectionIdentifier><Text>Denying Inequality or Rejecting Feminism</Text></Selection>
+						<Selection><SelectionIdentifier>a5</SelectionIdentifier><Text>Maybe sexist: can't tell without context</Text></Selection>
+						<Selection><SelectionIdentifier>a6</SelectionIdentifier><Text>Not sexist: not a direct statement of sexist opinion</Text></Selection>
+					</Selections>
+		    </SelectionAnswer>
+		</AnswerSpecification>
+	</Question>    
+	<Question>
+		<QuestionIdentifier>q5phrasing</QuestionIdentifier>
+		<DisplayName>Phrasing: which type of sexist phrasing applies to the previous tweet?</DisplayName>
+		<IsRequired>true</IsRequired>
+	    <QuestionContent>
+	        <FormattedContent><![CDATA[
+			Phrasing: which type of sexist phrasing appears in the previous tweet?
+]]></FormattedContent>
+		</QuestionContent>
+		<AnswerSpecification>
+		    <SelectionAnswer>
+				<StyleSuggestion>radiobutton</StyleSuggestion>
+					<Selections>
+						<Selection><SelectionIdentifier>a1</SelectionIdentifier><Text>Uncivil and sexist: attacks, foul language, or derogatory depictions directed towards individuals because of their gender</Text></Selection>
+						<Selection><SelectionIdentifier>a2</SelectionIdentifier><Text>Uncivil but not sexist: offensive phrasing or message that is not clearly directed towards the target's gender</Text></Selection>
+						<Selection><SelectionIdentifier>a3</SelectionIdentifier><Text>Civil (can be sexist or not sexist): neutral phrasing that does not contain offenses or slurs</Text></Selection>
+					</Selections>
+		    </SelectionAnswer>
+		</AnswerSpecification>
+	</Question>    
+
+
+
+</QuestionForm>

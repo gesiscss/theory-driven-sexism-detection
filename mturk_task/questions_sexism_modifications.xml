@@ -1,0 +1,129 @@
+<QuestionForm xmlns='http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2005-10-01/QuestionForm.xsd'>
+	<Overview>
+		<FormattedContent><![CDATA[
+<p>We asked annotators to help us understand why certain messages were sexist. Now, we ask you to return the same messages back to the annotators, <i>with as much sexism removed as possible</i>.
+Your task is twofold:
+</p>
+<ul>
+<li>modify the messages  to remove as much sexism as possible
+</li>
+<li>make as few modifications to the messages as possible.</li>
+</ul>
+<p>Modifications include adding, removing, or editing words. In the corresponding HIT, we will pay a bonus to the top annotators who transform our sexist sentences into <strong>meaningful</strong>, non-sexist sentences with minimal changes.  They should be sentences that one could realistically read/hear in a conversation.
+</p>
+<p>Here are some examples and guidelines on how to produce meaningful, non-sexist modifications:</p>
+<ol>
+<li>
+Do not modify words unless that is crucial to make the message not sexist. For example, the following modifies many extra words without need:
+<p><strong>Original:</strong><i>  "@nattyNA_: I find it weird when girls have ugly handwriting or when boys have good writing #justaintright"  @millerjr8		</i></p>
+<p><strong>Modified (bad):</strong><i> I find it weird when people have ugly handwriting.</i></p>
+<p>Instead, this modification is more parsimonious:</p>
+<p><strong>Modified (good):</strong><i> "@nattyNA_: I find it nice when girls have beautiful handwriting or when boys have beautiful writing "  @millerjr8</i></p>
+</li>    
+
+<li>Make sure that the sentence remains meaningful and coherent, even if this requires more changes. For example, “it’s not sexist but” makes no sense in the following modified message, and should be removed or modified:
+<p><strong>Original:</strong><i>  RT @Slice_of_Slater It's not sexist but I do believe most girls are not good drivers.</i></p>
+<p><strong>Modified (bad):</strong><i>  RT @Slice_of_Slater <strong>It's not sexist but</strong> I do believe most people are not good drivers.</i></p>
+</li>    
+
+<li>Sometimes text may contain multiple messages, of which some are not sexist or reply to the sexism. If that is the case, please tick the corresponding box, and modify the ones that are sexist. For example, the following message contains two messages, but only the second is sexist:
+<p><strong>Original:</strong><i>  I'm not vegetarian to an extent but eat anything but beef? No. <strong>@ConnorAPercival I'm not sexist to an extent but female rappers? No</strong></i></p>
+<p><i>→ Check the box</i></p>
+<p><i>→ modify the second sentence </i></p>
+</li>    
+
+<li>Do not make use of sarcasm to remove sexism, because that often makes the modified message ambiguous. For example, do not do this:
+
+<p><strong>Original:</strong><i>  "You have good taste in music for a girl" ....yeah cause only guys have good taste. </i></p>
+<p><strong>Modified (bad):</strong><i>  "You have good taste in music for a girl" ....yeah cause only guys have good taste.  <strong>#sarcasm</strong></i></p>
+</li>    
+
+<li>There are no “trick messages”: all of them have been screened for sexism. Still, if you do not think that a message is sexist, tick the corresponding box.
+
+</li>    
+</ol>
+
+<p>Here is a comprehensive example. Annotators told us that the sentence:  <i>“Some jobs are not appropriate for women”</i>    is sexist because it expresses endorsement of the inequality between genders.</p>
+<p>A good modification is:<i>“Some jobs are not inclusive for women”</i></p>
+<p>A worse modification is:<i>“All jobs are as appropriate for women as they are for men”</i>. This modification worse than the previous because it modifies many words.</p>
+<p>Another suboptimal modification is:<i>“Some jobs are not appropriate for unicorns”</i>. This modification is worse than the first because the modified sentence is unrealistic. Modified sentences should still look like what you see in everyday conversations.</p>
+<p>An all-out bad modification is:<i>“Some jobs are not appropriate for men”</i>. This modification is bad because it does not remove sexism, but only redirects it towards men.</p><br/><p><strong>Now, rate the following modifications.
+</strong></p>
+]]></FormattedContent>    
+	</Overview>
+	<Question>
+		<QuestionIdentifier>q1</QuestionIdentifier>
+		<DisplayName>Score the following modification (mark all that apply)</DisplayName>
+	    <QuestionContent>
+	        <FormattedContent><![CDATA[
+<p><strong>Original:</strong> RT @ThanhLachowsky call me sexist, but i hate to hear girls argue bout sports</p>
+<p><strong>Modified:</strong> I hate to hear people argue about sports.</p>
+]]></FormattedContent>
+		</QuestionContent>
+		<AnswerSpecification>
+		    <SelectionAnswer>
+					<MinSelectionCount>0</MinSelectionCount>
+			    	<MaxSelectionCount>5</MaxSelectionCount>
+			    	<StyleSuggestion>checkbox</StyleSuggestion>
+					<Selections>
+						<Selection><SelectionIdentifier>a1</SelectionIdentifier><Text>made unnecessary modifications</Text></Selection>
+						<Selection><SelectionIdentifier>a2</SelectionIdentifier><Text>not coherent</Text></Selection>
+						<Selection><SelectionIdentifier>a3</SelectionIdentifier><Text>still sexist</Text></Selection>
+						<Selection><SelectionIdentifier>a4</SelectionIdentifier><Text>unrealistic/unlikely to happen in an online conversation</Text></Selection>
+						<Selection><SelectionIdentifier>a5</SelectionIdentifier><Text>the original contains multiple messages, only some of which are sexit: should have ticked the “multiple messages” box</Text></Selection>
+					</Selections>
+		    </SelectionAnswer>
+		</AnswerSpecification>
+	</Question>    
+	<Question>
+		<QuestionIdentifier>q2</QuestionIdentifier>
+		<DisplayName>Score the following modification (mark all that apply)</DisplayName>
+	    <QuestionContent>
+	        <FormattedContent><![CDATA[
+<p><strong>Original:</strong> Yeah unlike this tweet @TeamSandhu I'm not sexist but do girls do everything for attention?</p>
+<p><strong>Modified:</strong> Yeah unlike this tweet @TeamSandhu I'm not sexist but do people do everything for attention?</p>
+]]></FormattedContent>
+		</QuestionContent>
+		<AnswerSpecification>
+		    <SelectionAnswer>
+					<MinSelectionCount>0</MinSelectionCount>
+			    	<MaxSelectionCount>5</MaxSelectionCount>
+			    	<StyleSuggestion>checkbox</StyleSuggestion>
+					<Selections>
+						<Selection><SelectionIdentifier>a1</SelectionIdentifier><Text>made unnecessary modifications</Text></Selection>
+						<Selection><SelectionIdentifier>a2</SelectionIdentifier><Text>not coherent</Text></Selection>
+						<Selection><SelectionIdentifier>a3</SelectionIdentifier><Text>still sexist</Text></Selection>
+						<Selection><SelectionIdentifier>a4</SelectionIdentifier><Text>unrealistic/unlikely to happen in an online conversation</Text></Selection>
+						<Selection><SelectionIdentifier>a5</SelectionIdentifier><Text>the original contains multiple messages, only some of which are sexit: should have ticked the “multiple messages” box</Text></Selection>
+					</Selections>
+		    </SelectionAnswer>
+		</AnswerSpecification>
+	</Question>    
+
+	<Question>
+		<QuestionIdentifier>q3</QuestionIdentifier>
+		<DisplayName>Score the following modification (mark all that apply)</DisplayName>
+	    <QuestionContent>
+	        <FormattedContent><![CDATA[
+<p><strong>Original:</strong> These bitches so worried about thinking like a man they don't know what it is to be a woman</p>
+<p><strong>Modified:</strong> These witches so worried about thinking like a vampire they don't know what it is to be a witch</p>
+]]></FormattedContent>
+		</QuestionContent>
+		<AnswerSpecification>
+		    <SelectionAnswer>
+					<MinSelectionCount>0</MinSelectionCount>
+			    	<MaxSelectionCount>5</MaxSelectionCount>
+			    	<StyleSuggestion>checkbox</StyleSuggestion>
+					<Selections>
+						<Selection><SelectionIdentifier>a1</SelectionIdentifier><Text>made unnecessary modifications</Text></Selection>
+						<Selection><SelectionIdentifier>a2</SelectionIdentifier><Text>not coherent</Text></Selection>
+						<Selection><SelectionIdentifier>a3</SelectionIdentifier><Text>still sexist</Text></Selection>
+						<Selection><SelectionIdentifier>a4</SelectionIdentifier><Text>unrealistic/unlikely to happen in an online conversation</Text></Selection>
+						<Selection><SelectionIdentifier>a5</SelectionIdentifier><Text>the original contains multiple messages, only some of which are sexit: should have ticked the “multiple messages” box</Text></Selection>
+					</Selections>
+		    </SelectionAnswer>
+		</AnswerSpecification>
+	</Question>    
+
+
+</QuestionForm>

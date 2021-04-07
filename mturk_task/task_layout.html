@@ -1,0 +1,212 @@
+<!-- Bootstrap v3.0.3 -->
+<!--<script src="https://sdk.amazonaws.com/js/aws-sdk-2.142.0.min.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<script>
+
+function displayEmoji() {
+
+  /**
+   * utf8ByteArrayToString() copied from:
+   *   https://github.com/google/closure-library/blob/e877b1eac410c0d842bcda118689759512e0e26f/closure/goog/crypt/crypt.js
+   *
+   * Converts a UTF-8 byte array to JavaScript's 16-bit Unicode.
+   * @param {Uint8Array|Array<number>} bytes UTF-8 byte array.
+   * @return {string} 16-bit Unicode string.
+   */
+  var utf8ByteArrayToString = function(bytes) {
+    var out = [], pos = 0, c = 0;
+    while (pos < bytes.length) {
+      var c1 = bytes[pos++];
+      if (c1 < 128) {
+        out[c++] = String.fromCharCode(c1);
+      } else if (c1 > 191 && c1 < 224) {
+        var c2 = bytes[pos++];
+        out[c++] = String.fromCharCode((c1 & 31) << 6 | c2 & 63);
+      } else if (c1 > 239 && c1 < 365) {
+        // Surrogate Pair
+        var c2 = bytes[pos++];
+        var c3 = bytes[pos++];
+        var c4 = bytes[pos++];
+        var u = ((c1 & 7) << 18 | (c2 & 63) << 12 | (c3 & 63) << 6 | c4 & 63) -
+                0x10000;
+        out[c++] = String.fromCharCode(0xD800 + (u >> 10));
+        out[c++] = String.fromCharCode(0xDC00 + (u & 1023));
+      } else {
+        var c2 = bytes[pos++];
+        var c3 = bytes[pos++];
+        out[c++] =
+          String.fromCharCode((c1 & 15) << 12 | (c2 & 63) << 6 | c3 & 63);
+      }
+    }
+    return out.join('');
+  }
+
+  jQuery(this).text(utf8ByteArrayToString(JSON.parse(jQuery(this).attr('data-emoji-bytes'))));
+}
+
+$(document).ready(function() {
+  $('span.emoji-bytes').each(displayEmoji);
+});
+</script>
+<!-- Form Name -->
+<!-- Select Basic -->
+<crowd-form answer-format="flatten-objects">
+    
+    <crowd-instructions link-text="instructions" link-type="button">
+        <detailed-instructions>
+            
+            <p>Here are the codes you will use to annotate for content:</p><br/>
+            
+            <p><strong>Behavioral Expectations:</strong>
+                how individuals of a gender should behave according to traditional views, e.g. women should be around the house</p>
+            
+            <p><strong>Stereotypes and Comparative Opinions:</strong>
+                how genders are traditionally seen and compared to each other, e.g. judging women mainly on the standards of beauty.</p>
+                    
+            <p><strong>Endorsement of Inequality:</strong>
+                the inequality between genders is beneficial, efforts to maintain it should be encouraged</p>
+                            
+            <p><strong>Denying Inequality & Rejecting Feminism:</strong>
+                the inequality between genders does not exist or is overblown, attempts to solve it are detrimental</p>
+                                    
+            <p><strong>Maybe sexist: can't tell without context:</strong>
+                the message might be sexist or not, e.g. depending on the context of the conversation, the content of links, etc.</p>
+                                            
+            <p><strong>Not sexist: not a direct statement of sexist opinion:</strong>
+                the speaker does not clearly hold sexist beliefs (the message might still be phrased in a sexist way though)</p>
+                                                    
+            <br/><p>Here are the codes you will use to annotate for phrasing:</p><br/>
+    
+        
+            <p><strong>Uncivil and sexist: attacks, foul language, or derogatory depictions directed towards individuals because of their gender:</strong>
+                humiliates individuals because of their sex or gender identity, for example by means of name-calling (e.g. "you bitch"), attacks (e.g. "I'm going to kick her back to the kitchen"), objectification (e.g. "She's stupid but I'd still do her"); inflammatory messages (e.g. "burn all women")</p>
+            <p><strong>Uncivil but not sexist: offensive phrasing or message that is not clearly directed towards the target's gender:</strong>
+                still offensive (including for example name-calling, attacks, inflammatory language, ...) but not because of the target's sex or gender identity</p>
+            <p><strong>Civil (can be sexist or not sexist): neutral phrasing that does not contain offenses or slurs:</strong>
+                messages without clear incivility. the message can still be sexist because of the content that it conveys</p>
+        </detailed-instructions>
+        
+        <short-summary>
+            <p>Your task is to identify not only if a message is sexist, but also why.</p>
+            <p>A message may be sexist because of its content--in other words, because of what the speaker believes. For example, the speaker may express stereotypes (how genders are traditionally seen and compared to each other) and behavioral expectations (how individuals of a gender should behave according to traditional views). Also, the speaker may express sexist attitudes towards the inequality that exists between genders, either recognizing and endorsing it, or antagonizing it by denying that the inequality exists or rejecting efforts to combat it.</p>
+            <p>Moreover, a message may be sexist because of how the speaker phrases it--independently from what the speaker believes. A message is sexist, for example, when it contains attacks, foul language, or derogatory depictions directed towards individuals because of their gender.</p>
+            <p>To summarize, a message can be sexist because of its content (what the speaker believes), its phrasing (the speaker's choice of words), or both. However, just because a message is aggressive or uses offensive language does not mean that it is sexist! Ready to help us understand sexism? In the detailed instructions you will find explanations for each coding option.</p>
+        </short-summary>
+        
+        <positive-example>
+            <p><i>So I wore a dress and wig while bartending and when people asked what my costume was I said a bad driver #dassexist</i>
+            <p><strong>content:</strong> <i>Stereotypes and Comparative Opinions</i> -- women are allegedly not good at driving</p>
+            <p><strong>phrasing:</strong> <i>Civil</i> -- the content is sexist, but the phrasing contains no slurs or direct humiliation </p>
+            </p>
+        </positive-example>
+        <negative-example>
+            <p><i>F*ck you Jane ur so stupid</i>
+            <p><strong>content:</strong> <i>Stereotypes and Comparative Opinions</i> -- the speaker does not clearly hold sexist beliefs; in fact, the content does not express any belief about genders. The right choice would be <i>Not sexist</i></p>
+            <p><strong>phrasing:</strong> <i>Uncivil and sexist</i> -- the content is offensive and Jane, the target, is likely a woman; however the message is not clearly sexist, it may be a personal grudge between the speaker and Jane. The right choice would be <i>Uncivil but not sexist</i></p>
+            </p>
+        </negative-example>
+    </crowd-instructions>
+<!--<form class="form-horizontal">-->
+<p class="text-center">${text}</p>
+<fieldset>
+<!--<div class="form-group">-->
+<!--  <label class="col-md-4 control-label text-right" for="content">content</label>-->
+<!--  <div class="col-md-8">-->
+<!--    <select id="content" name="content" class="form-control" autofocus required>-->
+<!--      <option value="" selected disabled hidden>Please choose</option>-->
+<!--      <option value="1">1 - Behavioral Expectations</option>-->
+<!--      <option value="2">2 - Stereotypes and Comparative Opinions</option>-->
+<!--      <option value="3">3 - Endorsement of Inequality</option>-->
+<!--      <option value="4">4 - Denying Inequality & Rejecting Feminism</option>-->
+<!--      <option value="5">5 - Maybe sexist: can't tell without context</option>-->
+<!--      <option value="6">6 - Not sexist: not a direct statement of sexist opinion</option>-->
+<!--    </select>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!-- Select Basic -->
+<!--<div class="form-group">-->
+<!--  <label class="col-md-4 control-label text-right" for="phrasing">phrasing</label>-->
+<!--  <div class="col-md-8">-->
+<!--    <select id="phrasing" name="phrasing" class="form-control" required>-->
+<!--      <option value="" selected disabled hidden>Please choose</option>-->
+<!--      <option value="1">1 - Uncivil and sexist: attacks, foul language, or derogatory depictions directed towards individuals because of their gender</option>-->
+<!--      <option value="2">2 - Uncivil but not sexist: offensive phrasing or message that is not clearly directed towards the target's gender</option>-->
+<!--      <option value="3">3 - Civil (can be sexist or not sexist): neutral phrasing that does not contain offenses or slurs</option>-->
+<!--    </select>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label text-right" for="content">Content</label>
+  <div class="col-md-8">
+  <div class="radio">
+    <label for="content-0">
+      <input type="radio" name="content" id="content-0" value="1" required>
+      1 - Behavioral Expectations
+    </label>
+	</div>
+  <div class="radio">
+    <label for="content-1">
+      <input type="radio" name="content" id="content-1" value="2" required>
+      2 - Stereotypes and Comparative Opinions
+    </label>
+	</div>
+  <div class="radio">
+    <label for="content-2">
+      <input type="radio" name="content" id="content-2" value="3" required>
+      3 - Endorsement of Inequality
+    </label>
+	</div>
+  <div class="radio">
+    <label for="content-3">
+      <input type="radio" name="content" id="content-3" value="4" required>
+      4 - Denying Inequality & Rejecting Feminism
+    </label>
+	</div>
+  <div class="radio">
+    <label for="content-4">
+      <input type="radio" name="content" id="content-4" value="5" required>
+      5 - Maybe sexist: can't tell without context
+    </label>
+	</div>
+  <div class="radio">
+    <label for="content-5">
+      <input type="radio" name="content" id="content-5" value="6" required>
+      6 - Not sexist: not a direct statement of sexist opinion
+    </label>
+	</div>
+  </div>
+</div>
+
+<!-- Multiple Radios -->
+<div class="form-group">
+  <label class="col-md-4 control-label text-right" for="phrasing">Phrasing</label>
+  <div class="col-md-8">
+  <div class="radio">
+    <label for="phrasing-0">
+      <input type="radio" name="phrasing" id="phrasing-0" value="1" required>
+      1 - Uncivil and sexist: attacks, foul language, or derogatory depictions directed towards individuals because of their gender
+    </label>
+	</div>
+  <div class="radio">
+    <label for="phrasing-1">
+      <input type="radio" name="phrasing" id="phrasing-1" value="2" required>
+      2 - Uncivil but not sexist: offensive phrasing or message that is not clearly directed towards the target's gender
+    </label>
+	</div>
+  <div class="radio">
+    <label for="phrasing-2">
+      <input type="radio" name="phrasing" id="phrasing-2" value="3" required>
+      3 - Civil (can be sexist or not sexist): neutral phrasing that does not contain offenses or slurs
+    </label>
+	</div>
+  </div>
+</div>
+
+</fieldset>
+<!--</form>-->
+</crowd-form>
