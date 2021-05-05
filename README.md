@@ -16,10 +16,10 @@ If you use the code, please cite the following paper:
 
 
 ```
-@article{samory2020unsex,
-  title={"Call me sexist but": Revisiting Sexism Detection Using Psychological Scales and Adversarial Samples},
-  author={Samory, Mattia and Sen, Indira and Kohne, Julian and Floeck, Fabian and Wagner, Claudia},
-  journal={ICWSM},
-  year={2021}
-}
+@inproceedings{samory2021sexism, 
+title={Call me sexist, but...: Revisiting Sexism Detection Using Psychological Scales and Adversarial Samples.}, 
+author={Samory, Mattia and Sen, Indira and Kohne, Julian and Fl{\"o}ck, Fabian and Wagner, Claudia}, 
+booktitle={Proceedings of the Fifteenth International Conference on Web and Social Media}, 
+year={2021}, 
+publisher={AAAI Press}}
 ```
