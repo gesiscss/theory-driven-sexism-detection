@@ -5,10 +5,11 @@ The repository comprises of the scripts used to generate the results in the pape
 
 To run the code:
 
-- install requirements from 'requirements.txt'
 - go to the code folder
-- To get the tables and figures, run the notebook 'plot figures.ipynb'
-- To reproduce the machine learning models, run 'check_classification_results.py'
+- install requirements from 'requirements.txt'
+- To reproduce the machine learning models, run 'classifiy.py'
+- To get the tables and figures, run the notebook 'get results.ipynb'
+
 
 In addition to the code, we also release the files we used for our Amazon Mechanical Turk task in the 'mturk_task' folder. 
 
