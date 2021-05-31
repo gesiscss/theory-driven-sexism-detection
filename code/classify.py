@@ -1,22 +1,3 @@
-from jha2017_preprocessing import preprocess, preprocess_jha2017, preprocess_light
-
-
-
-from sklearn.model_selection import StratifiedShuffleSplit, train_test_split
-from sklearn.metrics import classification_report, precision_recall_fscore_support, roc_curve
-from sklearn.preprocessing import StandardScaler
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import LogisticRegression
-from sklearn.base import BaseEstimator, TransformerMixin
-from sklearn.pipeline import Pipeline
-
-
-
-
-from sklearn.svm import SVC
-
-
-
 from config import DATA_ROOT, GENDERED_VOCAB_REL_PATH
 
 
@@ -32,9 +13,6 @@ import numpy as np
 import pandas as pd
 
 
-import seaborn as sns
-
-
 import unidecode
 import pickle
 
@@ -42,9 +20,9 @@ import pickle
 from utils import get_originals, get_modifications, drop_originals_without_modifications_inplace, stratified_sample_df, get_one_split
 from classification_utils import model_factory
 
+from sklearn.metrics import classification_report, precision_recall_fscore_support, roc_curve
 
-
-
+# compute, aggregate, and summarize results from all runs
 def compute_scores(row):
     y_true, y_pred = row.y_test, row.y_pred
     classification_dict =  classification_report(y_true, y_pred, output_dict=True)        
@@ -60,7 +38,6 @@ def compute_scores(row):
 results=list()
 
 
-# split the originals
 n_iterations = 5
 
 for iteration_n in range(n_iterations):
@@ -71,7 +48,7 @@ for iteration_n in range(n_iterations):
 
     modifications_reproduction = get_modifications(originals_reproduction)
 
-    print(len(originals_reproduction), len(modifications_reproduction))
+    #print(len(originals_reproduction), len(modifications_reproduction))
 
     drop_originals_without_modifications_inplace(originals_reproduction, modifications_reproduction)
 
@@ -91,8 +68,6 @@ for iteration_n in range(n_iterations):
     print( "dataset: scales train")
     originals_goldtrain = get_originals(datasets=['scales'], balance_classes=True)
     modifications_goldtrain = pd.DataFrame(columns=modifications_bh.columns) #empty df
-
-    print(len(originals_reproduction), len(modifications_reproduction), len(originals_replication), len(modifications_replication))
 
  
     originals_train_replication, originals_test_replication, modifications_train_replication, modifications_test_replication = get_one_split(originals_replication, modifications_replication)
@@ -158,10 +133,14 @@ for iteration_n in range(n_iterations):
                                              ('bert_finetuned', "text"),
                                              ("thold","toxicity"),
                                              ('baseline', "text")]:
+                
+                # train model
                 model = model_factory(model_name)
                 X_train, y_train = data_train[input_column].values, data_train[target_column].values
                 print('training',model_name,'on', train_type,train_domain)
                 model.fit(X_train, y_train)
+
+                # test on all test sets
                 for test_domain in test_sets:
                     for test_type, data_test in test_sets[test_domain].items():
                         X_test, y_test = data_test[input_column].values, data_test[target_column].values
@@ -175,13 +154,6 @@ for iteration_n in range(n_iterations):
                                 "y_pred": y_pred,
                                 "y_test_ids": data_test.id.values
                                        })
-
-
-
-originals_train_omnibus.groupby(['dataset', 'sexist']).size()
-
-
-modifications_train_omnibus.groupby(['dataset', 'sexist']).size()
 
 
 results_df = pd.DataFrame(results)
@@ -207,8 +179,8 @@ results_df['test'] = results_df['test_domain'] + '_'
 results_df['test'] +=results_df['test_type']
 
 
-with open("../results/all_runs_new_data.pkl", 'wb+') as f:
+with open("../results/all_runs__.pkl", 'wb+') as f:
     pickle.dump(results_df, f)
 
-with open("../results/all_runs_new_data.pkl2", 'wb+') as f:
+with open("../results/all_runs__.pkl2", 'wb+') as f:
     pickle.dump(results_df, f, protocol=2)

@@ -1,22 +1,4 @@
-from jha2017_preprocessing import preprocess, preprocess_jha2017, preprocess_light
-
-
-
-
 from sklearn.model_selection import StratifiedShuffleSplit, train_test_split
-from sklearn.metrics import classification_report, precision_recall_fscore_support, roc_curve
-from sklearn.preprocessing import StandardScaler
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import LogisticRegression
-from sklearn.base import BaseEstimator, TransformerMixin
-from sklearn.pipeline import Pipeline
-
-
-
-
-from sklearn.svm import SVC
-
-
 
 from config import DATA_ROOT, GENDERED_VOCAB_REL_PATH
 
@@ -32,18 +14,11 @@ import os
 import re
 
 
-
-
 import numpy as np
 import pandas as pd
 
 
-import seaborn as sns
-
-
-
 import unidecode
-import pickle
 
 
 #get the originals
@@ -76,12 +51,13 @@ def get_originals(datasets=['benevolent', 'hostile', 'other'], balance_classes=T
 def get_modifications(originals):
      
     modifications = pd.read_csv("../data/sexism_data/sexism_data.csv", index_col = False, encoding = 'utf-8')
+    # only pick non-sexist modifications
+    modifications = modifications[modifications['sexist'] == False]
     modifications = modifications[modifications['toxicity'].notna()]
     modifications = modifications[modifications['of_id'] != -1]
     modifications = modifications[modifications.of_id.isin(originals['id'].values)]
     modifications = modifications.groupby("of_id").apply(lambda x:x.sample(n=1)).reset_index(0, drop=True)
 
-    
     return modifications 
 
 

@@ -142,8 +142,6 @@ from bert_wrapper import FinetunedBertClassifier
 from cnn_wrapper_noflags import CharCNN
 
 
-
-
 def model_factory(model='logit'):
     if model=='logit':
         from nltk.corpus import stopwords
