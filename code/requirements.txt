@@ -50,7 +50,7 @@ face-recognition-models==0.3.0
 fastcache==1.0.2
 filelock==3.0.12
 Flask==0.10.1
-Flask-Cors==3.0.8
+Flask-Cors==3.0.9
 ftfy==5.6
 funcy==1.12
 future==0.17.1
