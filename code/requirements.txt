@@ -186,7 +186,7 @@ tables==3.3.0
 tb-nightly==1.14.0a20190301
 tensorboard==1.14.0
 tensorboardX==1.9
-tensorflow==2.5.0
+tensorflow==1.14.0
 tensorflow-estimator==1.14.0
 tensorflow-hub==0.7.0
 tensorflow-tensorboard==0.1.8
